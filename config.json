@@ -1,0 +1,11 @@
+{
+  "port": 8080,
+  "auth_token": "smarthome-secret-token",
+  "log_level": "info",
+  "weather_update_interval": 30,
+  "energy_update_interval": 10,
+  "security_timeout": 300,
+  "rate_limit_rps": 100,
+  "max_devices": 50,
+  "enable_debug_mode": true
+}
