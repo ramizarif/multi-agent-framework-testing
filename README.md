@@ -1,4 +1,4 @@
-# Smart Home Automation Hub
+# Smart Home Automation Hub + Multi-Agent Framework
 
 A comprehensive Go-based microservice for testing multi-agent frameworks. This application simulates a smart home automation system with interconnected components, REST APIs, background workers, and real-time updates.
 
@@ -13,30 +13,97 @@ A comprehensive Go-based microservice for testing multi-agent frameworks. This a
 - **Analytics Engine**: Process usage patterns and generate reports
 - **Testing Scenarios**: Built-in test scenarios for multi-agent testing
 
-## Architecture
+## Multi-Agent Framework
 
-The application consists of 9 main files:
-- `main.go` - Entry point and server setup
-- `config/config.go` - Configuration management
-- `models/models.go` - Data structures and types
-- `handlers/handlers.go` - HTTP handlers and routing
-- `services/device_service.go` - Device management logic
-- `services/weather_service.go` - Weather simulation
-- `workers/scheduler.go` - Background task processing
-- `utils/utils.go` - Helper functions and utilities
-- `storage/memory_store.go` - In-memory data persistence
+This repository includes a comprehensive single-agent development framework with multi-agent coordination templates. While originally designed for multi-agent coordination, it provides valuable structured workflows, issue discovery, and project management capabilities for individual developers and teams. The framework is integrated with the "multi-agent-framework-testing" GitHub project board for automatic issue management and progress tracking.
 
-## Running the Application
+### 🚨 **Important Note About Multi-Agent Capabilities**
 
-### Prerequisites
+**Current Limitation**: Claude Code cannot spawn separate Claude sessions. The "multi-agent" framework provides templates and coordination structures for single-agent workflows or team coordination, not true parallel AI agents.
+
+**What It Actually Provides**:
+- ✅ Comprehensive issue discovery and creation
+- ✅ Structured implementation planning
+- ✅ Conflict prevention logic for team coordination
+- ✅ Progress tracking templates
+- ✅ GitHub project board integration
+- ✅ Workflow templates for structured development
+
+### 🚀 Quick Start - Development Framework
+
+#### Create Comprehensive Issues
+```bash
+/issue-discovery
+```
+
+#### Initialize Master Agent (Single Agent Mode)
+```bash
+/master-agent
+```
+
+#### Check System Status
+```bash
+/agent:status
+```
+
+#### Work on Issues Systematically
+```bash
+# After Master Agent initialization
+I want to work on Issue #123. Please guide me through the sub-agent workflow.
+```
+
+#### Health Check
+```bash
+/project:health
+```
+
+### Master Agent Commands
+
+#### Core Commands
+- `status` - Show current system status and progress
+- `issue-discovery` - Interactive process to create comprehensive GitHub issues
+- `project-status` - Show GitHub project board status and available issues
+- `available-issues` - List issues ready for assignment from project board
+- `sync-project` - Synchronize system status with project board
+
+#### Workflow Commands (Single Agent Mode)
+- `assign <issue-number>` - Guide user through structured implementation of specific issue
+- `approve-plans` - Review implementation plans (for team coordination)
+- `conflicts` - Show potential conflicts and resolution strategies
+- `branch-health` - Check coordination system health
+
+#### Information Commands
+- `help` - Show available commands and usage
+- `coordination-files` - List current coordination files and their status
+- `recent-activity` - Show recent completions and activities
+
+### Framework Architecture
+
+```
+User Interface
+    ↓
+Master Agent (Central Coordinator)
+    ↓
+Structured Workflows & Templates
+    ↓
+GitHub Issues/Projects Integration
+```
+
+**Note**: While designed as a multi-agent system, the framework operates as a single-agent system with comprehensive coordination templates that can be used for team coordination.
+
+## Smart Home API
+
+### Running the Application
+
+#### Prerequisites
 - Go 1.21 or higher
 - Git
 
-### Installation
+#### Installation
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/ramizarif/multi-agent-framework-testing.git
 cd multi-agent-framework-testing
 
 # Download dependencies
@@ -183,15 +250,179 @@ ws.onmessage = (event) => {
 };
 ```
 
-## Testing Multi-Agent Interactions
+## Multi-Agent Framework Directory Structure
 
-This application is designed to test multi-agent frameworks with:
-- Complex interdependencies between components
-- Concurrent operations requiring synchronization
-- Event-driven updates between services
-- Data validation and error propagation
-- Configurable delays and failure modes
-- State management across multiple services
+The `.ai` directory contains the complete framework for structured development workflows and team coordination:
+
+```
+.ai/
+├── orchestrator/                    # Master Agent and coordination system
+│   ├── master-agent.md              # Master Agent configuration and commands
+│   ├── user-interface.md            # User command interface documentation
+│   ├── master-agent-ready.md        # System ready status and overview
+│   ├── issue-discovery-questions.md # Comprehensive issue discovery questionnaire
+│   ├── issue-creation-template.md   # GitHub issue creation template
+│   ├── issue-discovery-summary.md   # Issue discovery system documentation
+│   └── project-board-integration.md # GitHub project board integration guide
+├── agent-coordination/              # Agent coordination and tracking
+│   └── {branch-name}.md             # Branch-specific coordination files
+├── implementation-plans/            # Detailed implementation plans
+│   └── {branch-name}/
+│       └── {issue-title}-{number}.md # Agent implementation plans
+└── agent-templates/                 # Templates and workflows
+    ├── sub-agent-template.md        # Sub-agent workflow template
+    ├── spawn-instructions.md        # Agent spawn procedures (legacy)
+    ├── coordination-file-template.md # Coordination file structure
+    ├── implementation-plan-template.md # Implementation plan structure
+    ├── conflict-prevention-logic.md  # Conflict detection algorithms
+    └── github-integration.md        # GitHub integration documentation
+
+.claude/
+└── commands/                        # Claude Code slash commands
+    ├── master-agent.md              # Master Agent slash command
+    ├── issue-discovery.md           # Issue discovery slash command
+    ├── agent/
+    │   ├── spawn.md                 # Agent spawn command (legacy)
+    │   └── status.md                # Agent status command
+    └── project/
+        ├── health.md                # System health check
+        ├── reset.md                 # System reset command
+        └── board.md                 # Project board integration
+```
+
+### 📁 **Directory Breakdown**
+
+#### `.ai/orchestrator/` - Core Framework
+- **`master-agent.md`** - Central coordinator configuration with all commands
+- **`issue-discovery-questions.md`** - 32-question framework for comprehensive issue creation
+- **`issue-creation-template.md`** - GitHub issue template with labels and project board integration
+- **`project-board-integration.md`** - GitHub project board integration documentation
+
+#### `.ai/agent-coordination/` - Progress Tracking
+- **`{branch-name}.md`** - Real-time coordination files tracking agent status, conflicts, and progress
+- **Purpose**: Track multiple developers or structured workflow progress
+- **Format**: Standardized status updates, conflict detection, and dependency management
+
+#### `.ai/implementation-plans/` - Detailed Planning
+- **`{branch-name}/{issue-title}-{number}.md`** - Comprehensive implementation plans
+- **Includes**: Technical approach, conflict analysis, phase breakdown, testing requirements
+- **Purpose**: Ensure no implementation details are missed
+
+#### `.ai/agent-templates/` - Workflow Templates
+- **`sub-agent-template.md`** - Structured workflow for implementing issues
+- **`coordination-file-template.md`** - Template for tracking progress and conflicts
+- **`implementation-plan-template.md`** - Template for creating detailed implementation plans
+- **`conflict-prevention-logic.md`** - Algorithms for detecting and preventing conflicts
+
+#### `.claude/commands/` - Claude Code Integration
+- **`master-agent.md`** - Main framework activation via `/master-agent`
+- **`issue-discovery.md`** - Issue creation workflow via `/issue-discovery`
+- **`project/board.md`** - Project board management utilities
+
+### 🎯 **How to Use the Framework**
+
+#### **For Individual Developers**
+1. **Issue Discovery**: Use `/issue-discovery` to create comprehensive GitHub issues
+2. **Structured Implementation**: Follow sub-agent template for systematic development
+3. **Progress Tracking**: Use coordination files to track implementation progress
+4. **Conflict Prevention**: Use conflict detection logic to avoid implementation issues
+
+#### **For Teams**
+1. **Master Agent Coordination**: One person acts as coordinator using Master Agent
+2. **Issue Assignment**: Use comprehensive issues created through discovery process
+3. **Progress Monitoring**: Use coordination files to track team member progress
+4. **Conflict Prevention**: Prevent developers from working on conflicting areas
+
+#### **For Learning**
+1. **Study Templates**: Examine the structured approach to issue creation and implementation
+2. **Workflow Patterns**: Learn systematic development workflow patterns
+3. **Conflict Detection**: Understand how to identify and prevent development conflicts
+4. **Documentation Standards**: See examples of comprehensive technical documentation
+
+### 🔧 **Framework Components Deep Dive**
+
+#### **Issue Discovery System**
+The framework includes a comprehensive 32-question system for creating detailed GitHub issues:
+
+```markdown
+# Example Issue Discovery Flow
+1. Task Overview (What, Why, Type)
+2. Technical Context (Files, Technologies, Dependencies)
+3. Functional Requirements (Behavior, Interactions, I/O)
+4. Technical Requirements (Performance, Security, Data)
+5. Quality & Testing (Tests, Criteria, Edge Cases)
+6. Implementation (Approach, Standards, Integration)
+7. Dependencies (Prerequisites, Priority, Timeline)
+8. Documentation (Updates, Communication, Deployment)
+9. Definition of Done (Completion, Deliverables, Follow-up)
+```
+
+#### **Coordination System**
+Real-time tracking of development progress with conflict prevention:
+
+```markdown
+# Example Coordination File
+## Active Agents
+### Agent-1704123456000 - Issue #123: Add Authentication
+**Status**: 🔄 Implementation Phase 2
+**Files**: auth.go, handlers.go, models.go
+**Conflicts**: None detected
+**Progress**: 60% complete
+**Next**: Phase 3 - Testing (ETA: 30 min)
+```
+
+#### **Implementation Planning**
+Detailed technical specifications with conflict analysis:
+
+```markdown
+# Example Implementation Plan
+## Conflict Analysis
+- File conflicts with Agent-X on models.go
+- Service conflicts on authentication endpoints
+- Resolution: Coordinate timing with Agent-X Phase 3
+
+## Technical Approach
+- JWT-based authentication
+- Database schema updates
+- API endpoint modifications
+- Frontend login components
+```
+
+### 📚 **Learning Resources**
+
+#### **Key Files to Study**
+1. **`.ai/orchestrator/issue-discovery-questions.md`** - Learn comprehensive requirement gathering
+2. **`.ai/agent-templates/sub-agent-template.md`** - Study structured development workflow
+3. **`.ai/agent-templates/conflict-prevention-logic.md`** - Understand conflict detection algorithms
+4. **`.ai/orchestrator/issue-creation-template.md`** - See comprehensive issue documentation
+
+#### **Workflow Examples**
+1. **Issue Creation**: `/issue-discovery` → Comprehensive GitHub issue
+2. **Implementation**: Follow sub-agent template workflow
+3. **Coordination**: Use coordination files for progress tracking
+4. **Completion**: Structured testing and documentation
+
+### 🎓 **Framework Benefits for Learning**
+
+#### **Development Process**
+- **Systematic Approach**: Structured workflow for any development task
+- **Comprehensive Planning**: Detailed analysis before implementation
+- **Conflict Prevention**: Proactive identification of potential issues
+- **Progress Tracking**: Real-time monitoring of development progress
+
+#### **Documentation Standards**
+- **Issue Documentation**: Comprehensive GitHub issue templates
+- **Technical Specifications**: Detailed implementation planning
+- **Progress Reporting**: Structured status updates
+- **Conflict Analysis**: Systematic conflict detection and resolution
+
+#### **Team Coordination**
+- **Role Definition**: Clear coordinator and implementer roles
+- **Communication Protocols**: Structured approval and reporting processes
+- **Resource Management**: Conflict prevention and resource allocation
+- **Quality Assurance**: Built-in testing and validation requirements
+
+This framework provides a complete system for structured development whether working alone or coordinating with a team, with comprehensive templates and workflows that can be adapted to any project.
 
 ## Development
 
@@ -223,4 +454,4 @@ go build -o smart-home-hub
 
 ## License
 
-This project is provided as-is for testing multi-agent frameworks.
+This project is provided as-is for testing multi-agent frameworks and smart home automation development.
